@@ -53,7 +53,7 @@ function draw() {
     let x = random(-width/2, height/2)
     let y = random(-width/2, height/2)
     point(x, y)
-    let d = dist(0, 0, x, y)
+    let d = distancia(0, 0, x, y)
     if (d <= radio) {
       contador++
     }
@@ -68,13 +68,16 @@ function draw() {
   text("Total: " + puntos, 10, 90)
 }
 
+function distancia(x1, y1, x2, y2){
+  return sqrt(pow(x2-x1, 2) + pow(y2-y1, 2))
+}
+
 // Sacar api 
 let hola = async() => {
-  let respuesta = await fetch('https://api.github.com/users/DanielCastr02')
+  let respuesta = await fetch('https://api.github.com/users/FranM3')
   .then(res => res.json())
   .then(datos => console.log(datos))
   console.log(respuesta)
-
 }
 
 
